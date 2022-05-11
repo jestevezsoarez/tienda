@@ -11,10 +11,8 @@ export class AppComponent {
 
   constructor( private _infoPaginaService: InfoPaginaService ) {
 
-    console.log('Service ready!');
-    
-    // Leer el archivo JSON
 
-    
+
+
   }
 }
