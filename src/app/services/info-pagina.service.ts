@@ -7,7 +7,7 @@ import { InfoPagina } from '../interfaces/info-pagina.interface';
 })
 export class InfoPaginaService {
 
-  info: any = {};
+  info: InfoPagina = {};
   cargada: boolean = false; // para hacer un loading
 
   constructor( private _http: HttpClient ) {
@@ -20,7 +20,7 @@ export class InfoPaginaService {
 
           this.cargada = true;
           this.info = resp;
-          console.log(resp);
+          // console.log(resp);
           
         })
    }
