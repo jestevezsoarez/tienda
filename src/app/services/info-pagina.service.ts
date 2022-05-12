@@ -9,19 +9,32 @@ export class InfoPaginaService {
 
   info: InfoPagina = {};
   cargada: boolean = false; // para hacer un loading
+  sucursal: any[] = [];
 
   constructor( private _http: HttpClient ) {
 
-    console.log('Service ready!');
-    
-    // Leer el archivo JSON
-    this._http.get('assets/data/data-pagina.json')
-        .subscribe( (resp: InfoPagina) => {
-
-          this.cargada = true;
-          this.info = resp;
-          // console.log(resp);
-          
-        })
+    //console.log('Service ready!');
+    this.cargarInfo();
+    this.cargarSucursales();
    }
+
+   private cargarInfo() {
+     // Leer el archivo JSON
+     this._http.get('assets/data/data-pagina.json')
+     .subscribe( (resp: InfoPagina) => {
+
+       this.cargada = true;
+       this.info = resp;                 
+     });
+   }
+
+   private cargarSucursales() {
+    this._http.get('https://bbb-tienda-default-rtdb.firebaseio.com/sucursal.json')
+     .subscribe( (resp: any) => {
+       
+       this.sucursal = resp;
+       console.log(this.sucursal);          
+     });
+   }
+
 }
