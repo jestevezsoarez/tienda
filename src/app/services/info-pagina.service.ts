@@ -9,13 +9,13 @@ export class InfoPaginaService {
 
   info: InfoPagina = {};
   cargada: boolean = false; // para hacer un loading
-  sucursal: any[] = [];
+  sucursales: any[] = [];
 
   constructor( private _http: HttpClient ) {
 
     //console.log('Service ready!');
     this.cargarInfo();
-    this.cargarSucursales();
+    this.cargarSucursales();     
    }
 
    private cargarInfo() {
@@ -32,8 +32,8 @@ export class InfoPaginaService {
     this._http.get('https://bbb-tienda-default-rtdb.firebaseio.com/sucursal.json')
      .subscribe( (resp: any) => {
        
-       this.sucursal = resp;
-       console.log(this.sucursal);          
+       this.sucursales = resp;
+       //console.log(this.sucursales);                
      });
    }
 
