@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Producto } from "../interfaces/producto.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,14 @@ export class ProductosService {
     this.cargarProductos();
   }
 
-private cargarProductos() {
+  private cargarProductos() {
 
-  this.http.get(`${ this.url }productos_idx.json`)
-      .subscribe( (res: any) => {
+    this.http.get(`${ this.url }productos_idx.json`)
+        .subscribe( (res: Producto) => {
 
-        console.log(res);
-        this.loading = false;
-      });
-}
+          console.log(res);
+          this.loading = false;
+        });
+  }
 
 }
