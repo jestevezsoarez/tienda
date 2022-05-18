@@ -22,7 +22,7 @@ export class ProductosService {
 
           console.log(res);
           this.productos = res;
-          this.loading = false;
+          this.loading = false;          
         });
   }
 
