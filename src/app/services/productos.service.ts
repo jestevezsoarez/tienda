@@ -19,11 +19,13 @@ export class ProductosService {
 
     this.http.get(`${ this.url }productos_idx.json`)
         .subscribe( (res: any) => {
-
-          console.log(res);
-          this.productos = res;
+          this.productos = res;                    
           this.loading = false;          
         });
+  }
+
+  getProducto(id: string) {
+    return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);
   }
 
 }
