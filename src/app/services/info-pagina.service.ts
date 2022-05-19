@@ -10,6 +10,7 @@ export class InfoPaginaService {
   info: InfoPagina = {};
   cargada: boolean = false; // para hacer un loading
   sucursales: any[] = [];
+  loading: boolean = true;
 
   constructor( private _http: HttpClient ) {
 
@@ -33,7 +34,7 @@ export class InfoPaginaService {
      .subscribe( (resp: any) => {
        
        this.sucursales = resp;
-       //console.log(this.sucursales);                
+       this.loading = false;                
      });
    }
 

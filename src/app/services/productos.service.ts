@@ -24,8 +24,8 @@ export class ProductosService {
         });
   }
 
-  getProducto(id: string) {
-    return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);
+  getProducto(id: string) {    
+    return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);    
   }
 
 }

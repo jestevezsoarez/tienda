@@ -11,13 +11,14 @@ export class ItemComponent implements OnInit {
 
 
   constructor( private activatedRoute: ActivatedRoute, 
-                private productosService: ProductosService ) { }
+                public productosService: ProductosService ) { }
 
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe( params => {            
       this.productosService.getProducto(params['id']).subscribe( (res) => {
-        console.log(res);        
+        console.log(res);
+        this.productosService.loading = false;        
       });       
     })
 
