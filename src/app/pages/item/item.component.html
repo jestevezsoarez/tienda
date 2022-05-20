@@ -43,7 +43,10 @@
     </div>
     <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">        
         <div class="ae-grid ae-grid--collapse">
-        <div class="ae-grid__item item-lg-8"><img src="assets/productos/{{ id }}/main.jpg" alt="Urku Portfolio"></div>
+        <div class="ae-grid__item item-lg-8 animated fadeIn">
+          <br/><br/>
+          <img src="assets/productos/{{ id }}/main.jpg" [alt]="producto.producto">
+        </div>
         <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">            
             <p class="ae-u-bolder">Detalle</p>
             <p class="au-mb-3">{{ producto.resumen }}</p>

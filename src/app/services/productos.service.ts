@@ -19,7 +19,7 @@ export class ProductosService {
 
     this.http.get(`${ this.url }productos_idx.json`)
         .subscribe( (res: any) => {
-          this.productos = res;                    
+          this.productos = res;
           this.loading = false;          
         });
   }
