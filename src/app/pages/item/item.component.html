@@ -25,34 +25,51 @@
 
 <section *ngIf="producto">
     <div class="ae-container-fluid">        
-        <div class="ae-grid ae-grid--collapse rk-portfolio-info ">
-        <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
-            <h2 class="rk-portfolio-inner-title ">{{ producto.producto }}</h2>
-        </div>
-        <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
-            <p class="rk-portfolio-inner-client ">
-                <span class="ae-lambda">Código: </span>
-                <span class="ae-u-bolder">{{ producto.codigo }}</span>
-            </p>
-            <p class="rk-portfolio-inner-client ">
-                <span class="ae-lambda">Categoría: </span>
-                <span class="ae-u-bolder">{{ producto.categoria }}</span>
-            </p>            
-        </div>
+          <div class="ae-grid ae-grid--collapse rk-portfolio-info ">
+            <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
+                <h2 class="rk-portfolio-inner-title ">{{ producto.producto }}</h2>
+            </div>
+            <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
+                <p class="rk-portfolio-inner-client ">
+                    <span class="ae-lambda">Código: </span>
+                    <span class="ae-u-bolder">{{ producto.codigo }}</span>
+                </p>
+                <p class="rk-portfolio-inner-client ">
+                    <span class="ae-lambda">Categoría: </span>
+                    <span class="ae-u-bolder">{{ producto.categoria }}</span>
+                </p>            
+            </div>
         </div>
     </div>
     <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">        
         <div class="ae-grid ae-grid--collapse">
-        <div class="ae-grid__item item-lg-8 animated fadeIn">
-          <br/><br/>
-          <img src="assets/productos/{{ id }}/main.jpg" [alt]="producto.producto">
-        </div>
-        <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">            
-            <p class="ae-u-bolder">Detalle</p>
-            <p class="au-mb-3">{{ producto.resumen }}</p>
-            <p class="ae-u-bolder">Composición</p>
-            <p class="au-mb-3">{{ producto.composicion }}</p>
-        </div>
+            <div class="ae-grid__item item-lg-8 animated fadeIn">
+              <br/><br/>
+              <img src="assets/productos/{{ id }}/main.jpg" [alt]="producto.producto">
+            </div>
+            <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">            
+                <p class="ae-u-bolder">Detalle</p>
+                <p class="au-mb-3">{{ producto.resumen }}</p>
+                <p class="ae-u-bolder">Composición</p>
+                <p class="au-mb-3">{{ producto.composicion }}</p>                
+                
+                
+                <fieldset>
+                  <legend class="ae-u-bolder">Elegí tu talle:</legend>              
+                  <div *ngFor="let item of producto.talles; let i = index;">
+                    <input type="radio" id="talle-{{ i }}" name="talle" [value]="item">
+                    <label for="talle-{{ i }}"> {{ item }}</label>
+                  </div>
+                </fieldset>
+                <br>
+                <p class="ae-u-bolder">Elegí el color:</p>
+                <form>
+                    <select name = "dropdown">
+                        <option *ngFor="let color of producto.color" [value] = "color">{{ color }}</option>                        
+                    </select>
+                  </form>
+
+            </div>
         </div>        
     </div>
     <div class="ae-container-fluid au-pt-4 au-pb-4">

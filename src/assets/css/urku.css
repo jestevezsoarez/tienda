@@ -1288,6 +1288,11 @@ body {
   width: 100%;
 }
 
+/* Agrego regla para que no se encime imagen de fondo con radio buttons */
+.rk-portfolio--inner fieldset {
+  background-color: #fff;
+}
+
 .rk-portfolio-title {
   letter-spacing: .0359em;
 }
@@ -1312,11 +1317,11 @@ body {
   margin-top: 4.9rem;
 }
 
-.rk-portfolio-inner-title {
+.rk-portfolio-inner-title {  
   margin-top: .2em;
 }
 
-.rk-portfolio-details p {
+.rk-portfolio-details p {  
   margin-bottom: .4rem;
 }
 
