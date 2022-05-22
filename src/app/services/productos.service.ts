@@ -10,6 +10,7 @@ export class ProductosService {
   loading: boolean = true;
   url: string = 'https://bbb-tienda-default-rtdb.firebaseio.com/';
   productos: Producto[] = [];
+  searchProducts: Producto[] = [];
 
   constructor( private http: HttpClient ) {
     this.cargarProductos();
@@ -26,6 +27,15 @@ export class ProductosService {
 
   getProducto(id: string) {    
     return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);    
+  }
+
+  buscarProducto(termino: string) {
+
+    termino = termino.toLowerCase();
+    this.searchProducts = [];
+    this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino));
+    console.log(this.searchProducts);
+    
   }
 
 }
