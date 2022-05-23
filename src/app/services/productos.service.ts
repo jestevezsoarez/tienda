@@ -29,13 +29,11 @@ export class ProductosService {
     return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);    
   }
 
-  buscarProducto(termino: string) {
-
+  buscarProducto(termino: string): Producto[] {
     termino = termino.toLowerCase();
     this.searchProducts = [];
     this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino));
-    console.log(this.searchProducts);
-    
+    return this.searchProducts;    
   }
 
 }
