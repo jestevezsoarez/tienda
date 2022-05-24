@@ -14,14 +14,14 @@ export class SearchComponent implements OnInit {
 
   constructor( private activatedRoute: ActivatedRoute,
                 public productosService: ProductosService ) { }
-
+                
   ngOnInit(): void {
-
+    
     this.activatedRoute.params.subscribe( params => {
       this.termino = params['termino'];            
       this.busqueda = this.productosService.buscarProducto(this.termino);
     })
-
+    
   }
 
 }

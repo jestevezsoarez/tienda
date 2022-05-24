@@ -18,22 +18,53 @@ export class ProductosService {
 
   private cargarProductos() {
 
-    this.http.get(`${ this.url }productos_idx.json`)
-        .subscribe( (res: any) => {
-          this.productos = res;
-          this.loading = false;          
-        });
+    return new Promise( (resolve, reject) => {
+      
+      this.http.get(`${ this.url }productos_idx.json`)
+          .subscribe( (res: any) => {
+            this.productos = res;
+            this.loading = false;         
+            
+          });
+    })
+
   }
 
   getProducto(id: string) {    
     return this.http.get(`https://bbb-tienda-default-rtdb.firebaseio.com/productos/${ id }.json`);    
   }
 
-  buscarProducto(termino: string): Producto[] {
+  buscarProducto(termino: string):Producto[] {
+
+    if (this.productos.length === 0) {
+      // Hay que cargar los productos
+      this.cargarProductos().then( () => {
+        // aplicar el filtro
+        this.searchProducts = this.filtrarProductos(termino);        
+      })
+    } else {
+      // Los datos ya estan cargados entonces se filtran los productos
+      this.searchProducts = this.filtrarProductos(termino);      
+    }
+    this.guardarBusquedaSessionStorage();
+    return this.searchProducts;
+  }
+  
+  private filtrarProductos(termino: string): Producto[] {
+        
     termino = termino.toLowerCase();
     this.searchProducts = [];
     this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino));
-    return this.searchProducts;    
+    return this.searchProducts;        
+  }
+
+  private guardarBusquedaSessionStorage() {
+    sessionStorage.setItem('busqueda', JSON.stringify(this.searchProducts));
+  }
+
+  public obtenerBusquedaSessionStorage() {
+    this.searchProducts = JSON.parse(sessionStorage.getItem('busqueda') || "[]");
+    return this.searchProducts;
   }
 
 }

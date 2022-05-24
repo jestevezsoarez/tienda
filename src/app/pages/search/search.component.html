@@ -1,7 +1,7 @@
 <div *ngIf="!productosService.loading" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
 
     <div class="ae-grid__item item-lg-8 item-lg--offset-2">
-      <h4 class="ae-u-bolder">Resultados: {{ termino }}</h4>               
+      <h4 class="ae-u-bolder">Búsqueda: {{ termino }}</h4>               
     </div>
     
     <div class="ae-grid au-pt-2" *ngIf="busqueda.length == 0">
@@ -14,7 +14,7 @@
       <div class="ae-grid ae-grid--collapse">
           <div class="ae-grid__item item-lg-8 animated fadeIn">
             <br/><br/>
-            <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Sad Emoticon">            
+            <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Polaroid film">            
           </div>
       </div>        
   </div>
