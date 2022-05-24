@@ -1,15 +1,8 @@
-<div *ngIf="!productosService.loading" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-
+<div *ngIf="busqueda.length > 0" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
     <div class="ae-grid__item item-lg-8 item-lg--offset-2">
       <h4 class="ae-u-bolder">Búsqueda: {{ termino }}</h4>               
     </div>
     
-    <div class="ae-grid au-pt-2" *ngIf="busqueda.length == 0">
-      <div class="ae-grid__item item-lg-8 item-lg--offset-2">            
-        <p class="ae-u-bolder">No existen resultados</p>        
-      </div>
-    </div>
-      
     <a *ngFor="let producto of busqueda" [routerLink]="['/item', producto.cod]" 
       class="animated fadeIn rk-item ae-masonry__item">
       <img src="assets/productos/{{ producto.url }}.jpg" [alt]="producto.titulo">
@@ -18,8 +11,28 @@
         <p>{{ producto.categoria }}</p>
       </div>
     </a>
-    <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Polaroid film">            
-    
-  </div>
+</div>
 
-  
+<section *ngIf="busqueda.length == 0">
+    <div class="ae-container-fluid">        
+          <div class="ae-grid ae-grid--collapse rk-portfolio-info ">
+            <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
+                <h2 class="rk-portfolio-inner-title ">Buscando: {{ termino }}</h2>
+            </div>
+            <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
+                <p class="rk-portfolio-inner-client ">
+                    <span class="ae-u-bolder">No se encontraron productos.</span>                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">        
+        <div class="ae-grid ae-grid--collapse">
+            <div class="ae-grid__item item-lg-6 animated fadeIn">
+              <br/><br/>              
+              <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Negative Pictures">
+            </div>
+
+        </div>        
+    </div>
+</section>
