@@ -9,17 +9,8 @@
         <p class="ae-u-bolder">No existen resultados</p>        
       </div>
     </div>
-    
-    <div class="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">        
-      <div class="ae-grid ae-grid--collapse">
-          <div class="ae-grid__item item-lg-8 animated fadeIn">
-            <br/><br/>
-            <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Polaroid film">            
-          </div>
-      </div>        
-  </div>
       
-      <a *ngFor="let producto of busqueda" [routerLink]="['/item', producto.cod]" 
+    <a *ngFor="let producto of busqueda" [routerLink]="['/item', producto.cod]" 
       class="animated fadeIn rk-item ae-masonry__item">
       <img src="assets/productos/{{ producto.url }}.jpg" [alt]="producto.titulo">
       <div class="item-meta">
@@ -27,6 +18,7 @@
         <p>{{ producto.categoria }}</p>
       </div>
     </a>
+    <img *ngIf="busqueda.length == 0" src="./assets/img/polaroid-g69a704dc7_640.jpg" alt="Polaroid film">            
     
   </div>
 
