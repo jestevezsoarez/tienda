@@ -14,6 +14,7 @@ export class ProductosService {
 
   constructor( private http: HttpClient ) {
     this.cargarProductos();
+    this.obtenerBusquedaSessionStorage();
   }
 
   private cargarProductos() {
@@ -55,6 +56,7 @@ export class ProductosService {
     termino = termino.toLowerCase();
     this.searchProducts = [];
     this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino));
+    this.guardarBusquedaSessionStorage();
     return this.searchProducts;        
   }
 
@@ -64,6 +66,8 @@ export class ProductosService {
 
   public obtenerBusquedaSessionStorage() {
     this.searchProducts = JSON.parse(sessionStorage.getItem('busqueda') || "[]");
+    console.log(this.searchProducts);
+    
     return this.searchProducts;
   }
 
