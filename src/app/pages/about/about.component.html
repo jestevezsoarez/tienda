@@ -25,18 +25,23 @@
 <!-- Fin Loading -->
 
 <div class="ae-grid au-xs-ta-center au-mb-4">    
-    <div *ngFor="let sucursal of _servicio.sucursales" class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
-        <img [src]="sucursal.url" [alt]="sucursal.nombre" class="animated fadeIn au-mb-3">
+    <div *ngFor="let sucursal of _servicio.sucursales; let i=index;" class="ae-grid__item item-lg-4 ae-kappa au-mb-3">
+        <img [src]="sucursal.url" [alt]="sucursal.nombre" class="animated fadeIn au-mb-3">        
         <h5 class="ae-u-bolder au-mt-2">{{ sucursal.nombre }}</h5>
         <p class="ae-u-bolder au-mb-3">{{ sucursal.direccion }}</p>
         <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ sucursal.horario }}</p>
-        <!-- Colocar mapa -->
-        <app-map></app-map>
+        <!-- Colocar mapa -->                
+        <app-map [indice]="i"></app-map>                  
         <a target="_blank" href="https://twitter/{{ sucursal.twitter }}" class="ae-u-bolder au-underline">
             @{{ sucursal.twitter }}
         </a>
     </div>
+    <div *ngFor="let sucursal of _servicio.sucursales; let i=index;">
+        <app-map [indice]="i"></app-map>
+    </div> 
 </div>
+
+
 
 <div class="ae-grid au-pt-2">
     <div class="ae-grid__item item-lg-8 item-lg--offset-2">
