@@ -31,3 +31,9 @@ svg path,
 svg rect{
   fill: black;
 }
+
+/* Mapa de las sucursales */
+.map {
+  height: 400px;
+  width: 100%;
+}

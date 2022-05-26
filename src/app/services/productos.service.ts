@@ -66,7 +66,6 @@ export class ProductosService {
 
   public obtenerBusquedaSessionStorage() {
     this.searchProducts = JSON.parse(sessionStorage.getItem('busqueda') || "[]");
-    console.log(this.searchProducts);
     
     return this.searchProducts;
   }
