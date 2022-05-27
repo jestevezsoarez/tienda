@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.component';
-import { AboutComponent } from './pages/about/about.component';
+import { BranchComponent } from './pages/about/branch.component';
 import { ItemComponent } from './pages/item/item.component';
 
 // Rutas
@@ -21,7 +21,7 @@ import { MapComponent } from './components/map/map.component';
     HeaderComponent,
     FooterComponent,
     LanzamientosComponent,
-    AboutComponent,
+    BranchComponent,
     ItemComponent,
     SearchComponent,
     MapComponent
