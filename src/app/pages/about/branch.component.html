@@ -37,7 +37,7 @@
         </a>
     </div>
     <div *ngFor="let sucursal of _servicio.sucursales; let i=index;">
-        <app-map [indice]="i"></app-map>
+        <app-map [indice]="i" [longitud]="sucursal.longitud" [latitud]="sucursal.latitud"></app-map>
     </div> 
 </div>
 

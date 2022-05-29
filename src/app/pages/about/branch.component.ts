@@ -11,12 +11,11 @@ export class BranchComponent implements OnInit {
   
 
   constructor( public _servicio: InfoPaginaService,
-                public productosService: ProductosService ) {   
+                public productosService: ProductosService ) { }
+
+  ngOnInit(): void {
+    console.log(this._servicio);
     
-  }
-
-  ngOnInit(): void {    
-
   }
 
 }

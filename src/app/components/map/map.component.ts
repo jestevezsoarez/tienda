@@ -11,6 +11,8 @@ import OSM, {ATTRIBUTION} from 'ol/source/OSM';
 export class MapComponent implements OnInit {
 
   @Input() indice: number | undefined;
+  @Input() longitud: number | undefined;
+  @Input() latitud: number | undefined;
   map: any;
 
   constructor() { }
@@ -24,7 +26,7 @@ export class MapComponent implements OnInit {
         })
       ],
       view: new View({
-        center: fromLonLat([-56.166914549381275, -34.898285159502]), // hardcode, luego cambiar
+        center: fromLonLat([this.longitud!, this.latitud!]),
         zoom: 16
       })
     });       
