@@ -24,8 +24,7 @@ export class ProductosService {
       this.http.get(`${ this.url }productos_idx.json`)
           .subscribe( (res: any) => {
             this.productos = res;
-            this.loading = false;         
-            
+            this.loading = false;
           });
     })
 
@@ -51,13 +50,18 @@ export class ProductosService {
     return this.searchProducts;
   }
   
-  private filtrarProductos(termino: string): Producto[] {
-        
+  private filtrarProductos(termino: string): Producto[] {        
     termino = termino.toLowerCase();
     this.searchProducts = [];
-    this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino));
+    this.searchProducts = this.productos.filter( producto => producto.titulo?.toLowerCase().includes(termino) );
     this.guardarBusquedaSessionStorage();
     return this.searchProducts;        
+  }
+
+  private filtrarPorCategoria(categoria: string): Producto[] {
+    this.searchProducts = [];
+    this.searchProducts = this.productos.filter( producto => producto.categoria = categoria );
+    return this.searchProducts;
   }
 
   private guardarBusquedaSessionStorage() {
