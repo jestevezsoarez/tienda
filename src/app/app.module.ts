@@ -14,6 +14,7 @@ import { ItemComponent } from './pages/item/item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './pages/search/search.component';
 import { MapComponent } from './components/map/map.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MapComponent } from './components/map/map.component';
     BranchComponent,
     ItemComponent,
     SearchComponent,
-    MapComponent
+    MapComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

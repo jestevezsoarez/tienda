@@ -10,8 +10,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class BranchComponent implements OnInit {
   
 
-  constructor( public _servicio: InfoPaginaService,
-                public productosService: ProductosService ) { }
+  constructor( public _servicio: InfoPaginaService ) { }
 
   ngOnInit(): void {
     console.log(this._servicio);
