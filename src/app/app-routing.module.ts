@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BranchComponent } from './pages/about/branch.component';
+import { BranchComponent } from './pages/branch/branch.component';
 import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.component';
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
