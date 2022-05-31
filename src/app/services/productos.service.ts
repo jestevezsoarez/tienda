@@ -58,9 +58,9 @@ export class ProductosService {
     return this.searchProducts;        
   }
 
-  private filtrarPorCategoria(categoria: string): Producto[] {
+  public filtrarPorCategoria(category: string): Producto[] {
     this.searchProducts = [];
-    this.searchProducts = this.productos.filter( producto => producto.categoria = categoria );
+    this.searchProducts = this.productos.filter( producto => producto.categoria?.includes(category) );
     return this.searchProducts;
   }
 

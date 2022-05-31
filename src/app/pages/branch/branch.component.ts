@@ -13,8 +13,6 @@ export class BranchComponent implements OnInit {
   constructor( public _servicio: InfoPaginaService ) { }
 
   ngOnInit(): void {
-    console.log(this._servicio);
-    
   }
 
 }
