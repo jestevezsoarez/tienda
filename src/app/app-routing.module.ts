@@ -5,6 +5,7 @@ import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.compone
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { InformationComponent } from './pages/information/information.component';
 
 
 const app_routes: Routes = [
@@ -14,6 +15,7 @@ const app_routes: Routes = [
     { path: 'item/:id', component: ItemComponent },
     { path: 'search/:termino', component: SearchComponent },
     { path: 'category/:categoria', component: CategoryComponent },
+    { path: 'information', component: InformationComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

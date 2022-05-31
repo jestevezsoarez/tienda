@@ -16,6 +16,7 @@ import { CategoryComponent } from './pages/category/category.component';
 
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
+import { InformationComponent } from './pages/information/information.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
     SearchComponent,
     MapComponent,
     LoadingComponent,
-    CategoryComponent
+    CategoryComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
