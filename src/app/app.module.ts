@@ -9,12 +9,13 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.component';
 import { BranchComponent } from './pages/branch/branch.component';
 import { ItemComponent } from './pages/item/item.component';
-
-// Rutas
-import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './pages/search/search.component';
 import { MapComponent } from './components/map/map.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { CategoryComponent } from './pages/category/category.component';
+
+// Rutas
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoadingComponent } from './shared/loading/loading.component';
     ItemComponent,
     SearchComponent,
     MapComponent,
-    LoadingComponent
+    LoadingComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

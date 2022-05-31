@@ -31,9 +31,9 @@
           <li class="rk-menu__item"><a href="#0" class="rk-menu__link">Vestimenta</a>
             <nav class="rk-menu__sub">
               <ul class="rk-container">
-                <li class="rk-menu__item"><a href="unisex.html" class="rk-menu__link">Unisex</a></li>
-                <li class="rk-menu__item"><a href="hombre.html" class="rk-menu__link">Hombre</a></li>
-                <li class="rk-menu__item"><a href="mujer.html" class="rk-menu__link">Mujer</a></li>
+                <li class="rk-menu__item" routerLinkActive="active"><a [routerLink]="['/category', 'unisex']" class="rk-menu__link">Unisex</a></li>
+                <li class="rk-menu__item" routerLinkActive="active"><a [routerLink]="['/category', 'hombre']" class="rk-menu__link">Hombre</a></li>
+                <li class="rk-menu__item" routerLinkActive="active"><a [routerLink]="['/category', 'mujer']" class="rk-menu__link">Mujer</a></li>
               </ul>
             </nav>
           </li>

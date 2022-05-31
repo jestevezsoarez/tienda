@@ -4,6 +4,7 @@ import { BranchComponent } from './pages/branch/branch.component';
 import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.component';
 import { ItemComponent } from './pages/item/item.component';
 import { SearchComponent } from './pages/search/search.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 
 const app_routes: Routes = [
@@ -12,6 +13,7 @@ const app_routes: Routes = [
     { path: 'branch', component: BranchComponent},
     { path: 'item/:id', component: ItemComponent },
     { path: 'search/:termino', component: SearchComponent },
+    { path: 'category/:categoria', component: CategoryComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
