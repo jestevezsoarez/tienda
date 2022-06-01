@@ -5,9 +5,9 @@
         <img src="assets/img/{{ sucursal.url }}.jpg" [alt]="sucursal.nombre" class="animated fadeIn au-mb-3">        
         <h5 class="ae-u-bolder au-mt-2">{{ sucursal.nombre }}</h5>
         <p class="ae-u-bolder au-mb-3">{{ sucursal.direccion }}</p>        
+        <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ sucursal.horario }}</p> 
         <!-- Colocar mapa -->                
         <app-map [indice]="i"></app-map>                  
-        <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">{{ sucursal.horario }}</p> 
         <a target="_blank" href="https://twitter/{{ sucursal.twitter }}" class="ae-u-bolder au-underline">
             @{{ sucursal.twitter }}
         </a>
