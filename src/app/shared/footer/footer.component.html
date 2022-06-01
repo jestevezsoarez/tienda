@@ -2,12 +2,14 @@
     <div class="ae-grid ae-grid--collapse">
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
         <ul class="rk-menu rk-footer-menu">
-          <li class="rk-menu__item"><a href="nosotros.html" class="rk-menu__link">Sobre Nosotros</a>
+          <li class="rk-menu__item" routerLinkActive="router-link-active">
+            <a [routerLink]="['/about']" class="rk-menu__link">Sobre Nosotros</a>
           </li>
           <li class="rk-menu__item" routerLinkActive="router-link-active">
             <a [routerLink]="['/information']" class="rk-menu__link">Información</a>
           </li>
-          <li class="rk-menu__item"><a href="contacto.html" class="rk-menu__link">Contacto</a>
+          <li class="rk-menu__item" routerLinkActive="router-link-active">
+            <a [routerLink]="['/contact']" class="rk-menu__link">Contacto</a>
           </li>
         </ul>
         <p class="rk-footer__text rk-footer__copy "> 

@@ -17,6 +17,8 @@ import { CategoryComponent } from './pages/category/category.component';
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
 import { InformationComponent } from './pages/information/information.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { InformationComponent } from './pages/information/information.component'
     MapComponent,
     LoadingComponent,
     CategoryComponent,
-    InformationComponent
+    InformationComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
